@@ -94,4 +94,51 @@ public class Job {
     public int getId() {
         return id;
     }
+    public String toString() {
+//        return System.lineSeparator();
+        String name;
+        if (this.getName().isEmpty()){
+            name =  "Data not available";
+        } else {
+            name =  this.getName();
+        }
+
+        String employer;
+        if (this.getEmployer().getValue().isEmpty()){
+            employer =  "Data not available";
+        } else {
+            employer =  this.getEmployer().getValue();
+        }
+
+        String location;
+        if (this.getLocation().getValue().isEmpty()){
+            location =  "Data not available";
+        } else {
+            location =  this.getLocation().getValue();
+        }
+
+        String positiontype;
+        if (this.getPositionType().getValue().isEmpty()){
+            positiontype =  "Data not available";
+        } else {
+            positiontype =  this.getPositionType().getValue();
+        }
+
+        String corecompetency;
+        if (this.getCoreCompetency().getValue().isEmpty()){
+            corecompetency =  "Data not available";
+        } else {
+            corecompetency =  this.getCoreCompetency().getValue();
+        }
+
+        return ( System.lineSeparator() +
+                "ID: " + this.getId() + System.lineSeparator()+
+                "Name: " + name + System.lineSeparator()+
+                "Employer: " + employer + System.lineSeparator() +
+                "Location: " + location + System.lineSeparator() +
+                "Position Type: " + positiontype + System.lineSeparator() +
+                "Core Competency: " + corecompetency+
+                System.lineSeparator()
+        );
+    }
 }
